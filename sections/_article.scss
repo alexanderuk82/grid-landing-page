@@ -1,0 +1,26 @@
+@use '../variables/' as *;
+.article {
+  @extend %spaceMtop;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  column-gap: 3.5rem;
+
+  .title {
+    @include stylePost('title', $font-color);
+  }
+
+  .date {
+    @include stylePost('date', $font-color);
+  }
+
+  .text {
+    @include stylePost('text', $font-color);
+  }
+
+  .btn__post {
+    @include stylePost('button', $font-color);
+  }
+  .artist {
+    @include stylePost('artist', default);
+  }
+}

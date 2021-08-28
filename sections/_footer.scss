@@ -1,0 +1,9 @@
+@use '../variables/' as *;
+
+.footer {
+  @extend %spaceMtop;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  column-gap: 3.5rem;
+  row-gap: 5.5rem;
+}

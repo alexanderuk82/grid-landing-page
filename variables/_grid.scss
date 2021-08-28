@@ -1,0 +1,43 @@
+//Mixing for Grid layout
+@mixin gridMainLayout {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+@mixin sectionGrid($section) {
+  @if (
+    ($section == 'articles') or
+      ($section == 'navigation') or
+      ($section == 'hero') or
+      ($section == 'footer')
+  ) {
+    grid-column: 1/-1;
+  }
+  @if $section == 'main' {
+    grid-column: 1 / span 4;
+  }
+  @if $section == 'aside' {
+    grid-column: 5 / -1;
+  }
+}
+
+.navigation {
+  @include sectionGrid('navigation');
+}
+.hero {
+  @include sectionGrid('hero');
+}
+
+.article {
+  @include sectionGrid('articles');
+}
+.main {
+  @include sectionGrid('main');
+}
+.aside {
+  @include sectionGrid('aside');
+}
+
+.footer {
+  @include sectionGrid('footer');
+}
